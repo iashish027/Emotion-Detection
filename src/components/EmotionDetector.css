@@ -1,0 +1,88 @@
+* {
+  font-family: 'Courier New', Courier, monospace;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.ball {
+  width: 18px;
+  height: 18px;
+  margin: 8px;
+  background: radial-gradient(circle at center, #ff5c5c, #990000);
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.emotion-detector-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  color: #f0f0f0;
+  text-align: center;
+  gap: 2rem;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 640px;
+  max-width: 95%;
+  aspect-ratio: 16 / 9;
+  border: 3px solid #9b59b6;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #0a0a0a;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+video, canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.status-indicator {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.status-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #555;
+  transition: background-color 0.3s ease;
+}
+
+.status-dot.active {
+  background-color: #00ff88;
+}
+
+.error-message {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.4);
+}
